@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-green.min.css" />
+    <link rel="stylesheet" href="Estilos.css">
+    <!--manifest es para que sea descargable la app
+    <link rel="manifest" href="manifest.json">-->
+    <title>Pagina web</title>
+
+</head>
+
+<body>
+    
+        <!--mdl-layout mdl-js-layout (Buscador-Menu de la izquierda)-->
+        <div class="mdl-layout mdl-js-layout">
+            <header class="mdl-layout__header" style="display: flex; background-color: rgb(149, 192, 85);">
+                <div class="mdl-layout-icon"></div>
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout__title">Formulario</span>
+                    <div class="mdl-layout-spacer"></div>
+
+                    <!--NAVEGADOR DE ITEMS-->
+                    <!--<nav class="mdl-navigation">
+                        <a class="mdl-navigation__link" href="#">item1</a>
+                        <a class="mdl-navigation__link" href="#">item2</a>
+                        <a class="mdl-navigation__link" href="#">item3</a>
+                        <a class="mdl-navigation__link" href="#">item4</a>
+                        <a class="mdl-navigation__link" href="#">item5</a>
+                    </nav>-->
+
+
+
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="inpAgregar">
+                        <label class="mdl-textfield__label etiqueta" for="sample1">Agregar item</label>
+                    </div>
+
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                    id="btnAgregar">
+                        +
+                    </button>
+
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                    id="btnDeshacer">
+                        Deshacer
+                    </button>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+                        <label class="mdl-button mdl-js-button mdl-button--icon" for="inputBusqueda">
+                            <i class="material-icons">search</i>
+                        </label>
+                        <div class="mdl-textfield__expandable-holder">
+                            <input class="mdl-textfield__input" type="text" name="sample" id="inputBusqueda">
+                        </div>
+
+
+                    </div>
+            </header>
+
+
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout__title">Menu</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="#">Limpiar lista</a>
+                    <a class="mdl-navigation__link" href="#">Guardar lista</a>
+                    <a class="mdl-navigation__link" href="#">Cargar lista</a>
+                </nav>
+            </div>
+
+            <div id="galeria">
+
+                <!--<div class="item">
+                    <div class="titulo">
+                        Producto1
+                    </div>
+
+                    <div class="controles">
+                        Unidades
+                    </div>
+
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="eliminar">
+                        Eliminar
+                      </button>
+
+                </div>-->
+            </div>
+
+        </div>
+    
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="Main.js"></script>
+
+    <!--<script>
+        if('serviceWorker' in navigator){
+            navigator.serviceWorker.register('sw.js')
+            .then(reg => console.log('ServiceWorker registrado correctamente', reg));
+            //Desinstalar
+            /*navigator.serviceWorker.getRegistration().then(r => r.unregister());*/
+        }
+    </script>-->
+
+
+</body>
+
+</html>

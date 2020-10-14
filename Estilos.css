@@ -1,0 +1,79 @@
+
+*{
+    font-weight: bold;
+    font-style: initial;   
+}
+
+
+h1{
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(65, 65, 65);
+}
+
+
+h2{
+    font-size: 20px;
+}
+
+h3{
+    font-size: 15px;
+    color: yellow;
+}
+
+#mdl-layout__title{
+    font-size: 30px;
+}
+
+
+.main, .mdl-layout{
+    background-image: url(imagenes/fondoPrincipal.jpg);
+    background-size: 100%;
+    /*con el attachment:fixed corrijo la imagen para que no se vea cortada */
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+
+#galeria{
+    display: flexbox;
+    flex-direction: column;
+    width: 90%;
+    padding: 20px;
+}
+
+#galeria .item{
+    width: 60%;
+    height: 50%;
+    background-color: rgb(185, 197, 209,0.4);
+    margin-bottom: 20px;
+    padding: 10px;
+    margin-left: 240px;
+    /*bloques uno al lado del otro*/
+    display: flex;
+    /*espacios entre medio */
+    justify-content: space-evenly;
+}
+
+#galeria .item .titulo {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    width: 25%;
+    /*background-color: green;*/
+    
+}
+
+#galeria .item .controles {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    width: 25%;
+    /*background-color: blue;*/
+    
+}
+
+#eliminar{
+    color: white;
+    background-color: rgb(209, 58, 58);
+}
