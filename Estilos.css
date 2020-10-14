@@ -28,7 +28,7 @@ h3{
 
 
 .main, .mdl-layout{
-    background-image: url(../Imagenes/fondoPrincipal.jpg);
+    background-image: url(imagenes/fondoPrincipal.jpg);
     background-size: 100%;
     /*con el attachment:fixed corrijo la imagen para que no se vea cortada */
     background-attachment: fixed;
