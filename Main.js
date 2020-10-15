@@ -23,7 +23,7 @@ porque puedo buscar en ella, puedo combinar, puedo eliminar items.
 
 //Estructura de datos
 let datos = [
-    { titulo: 'carne', precio: 100, cantidad: 1 },
+    { titulo: 'asado', precio: 100, cantidad: 1 },
     { titulo: 'sopa', precio: 200, cantidad: 2 },
     { titulo: 'masa', precio: 300, cantidad: 3 },
     { titulo: 'fideos', precio: 400, cantidad: 4 }
