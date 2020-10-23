@@ -23,11 +23,10 @@ porque puedo buscar en ella, puedo combinar, puedo eliminar items.
 
 //Estructura de datos
 let datos = [
-    { titulo: 'asado', precio: 100, cantidad: 1 },
+    { titulo: 'carne', precio: 100, cantidad: 1 },
     { titulo: 'sopa', precio: 200, cantidad: 2 },
     { titulo: 'masa', precio: 300, cantidad: 3 },
-    { titulo: 'fideos', precio: 400, cantidad: 4 },
-   { titulo: 'enzo', precio: 400, cantidad: 4 }
+    { titulo: 'fideos', precio: 400, cantidad: 4 }
 ]
 
 //vista es para que no se modifique la información de datos[];
@@ -44,12 +43,12 @@ const btnDeshacer = document.querySelector('#btnDeshacer');
 const inpAgregar = document.querySelector('#inpAgregar');
 const galeria = document.querySelector('#galeria');
 
+
 //--Funciones--
 
 /*Precisamos que los productos que se agreguen se reflejen ademas de la consola en la interfaz. 
 para ello, creamos la función Render.
 -> Lo que va a hacer es recibir una lista de items y procesarla.*/
-
 
 const template = ({titulo, cantidad, precio}) =>
     `<div class="item">
@@ -75,7 +74,6 @@ function render(lista = [{ titulo: '', cantidad: 0, precio: 0 }]) {
     })
 }
 
-
 //--Eventos--
 
 
@@ -91,20 +89,28 @@ btnAgregar.addEventListener('click', () => {
     //const id = datos.reduce((prev, valActual) => {
 
     /*almacenar el estado anterior al cambio.   
-    importante estar antes del push*/
-    datosPrevios = datos;
+    importante estar antes del push
+    si o si hay que usar el slice ya que sino iguala datos previos
+    con datos y no es lo que queremos. lo explica en clase 2
+    minuto: 1 hora 35min
+    
+    con el Slice, se crea un nuevo array. Nuevo espacio de memoria*/
+
+    datosPrevios = datos.slice(0);
+    /*el settimeout aqui funciona para generar un delay y 
+    ayudar a que el boton deshacer funcione correctamente*/
+    setTimeout(function(){
     //agregar un nuevo item/objeto
-    datos.push({
+        datos.push({
         //.value: tomar lo que se tomo en el textfield.
         titulo: inpAgregar.value,
         cantidad: 0,
         precio: 0
     });
     alert("item agregado");
+}, 500);
 
 });
-
-
 
 
 //al ingresar datos en el (campo de busqueda).
@@ -121,20 +127,17 @@ inputBusqueda.addEventListener('input', e => {
     render(vista);
 })
 
-
-
 //al hacer click en deshacer
 
 btnDeshacer.addEventListener('click', () => {
     //recuperar la información
     datos = datosPrevios;
+    alert("volviste atras");
 })
 //al hacer click en (limpiar lista).
 //al hacer click en (guardar lista).
 //al hacer click en (cargar lista).
 //al hacer click en un item con (la clase borrar).
-
-
 
 
 
