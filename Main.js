@@ -43,6 +43,9 @@ const btnDeshacer = document.querySelector('#btnDeshacer');
 const inpAgregar = document.querySelector('#inpAgregar');
 const galeria = document.querySelector('#galeria');
 
+/*PRUEBA*/
+const limpiar = document.querySelector('#Limpiarlista');
+
 
 //--Funciones--
 
@@ -118,12 +121,15 @@ btnAgregar.addEventListener('click', () => {
 inputBusqueda.addEventListener('input', e => {
     let vista = datos.filter((val) => {
         if (val.titulo.includes(e.target.value)){
+            /*si retorna true es porque el (val) se encuentra 
+            dentro de algun titulo del array vista*/
             return true;
         }
         else{
             return false;
         }
     })
+    //este render se hace por cada vez que el usuario cambia el contenido del campo de busqueda.
     render(vista);
 })
 
@@ -140,6 +146,10 @@ btnDeshacer.addEventListener('click', () => {
 //al hacer click en un item con (la clase borrar).
 
 
+limpiar.addEventListener('click', () =>{
+    alert("se limpió la lista");
+    datos = [];
+})
 
 //--Objetos--
 
