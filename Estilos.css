@@ -45,8 +45,8 @@ h3{
 }
 
 #galeria .item{
-    width: 60%;
-    height: 50%;
+    width: 70%;
+    height: 2%;
     background-color: rgb(185, 197, 209,0.4);
     margin-bottom: 20px;
     padding: 10px;
@@ -76,4 +76,11 @@ h3{
 #eliminar{
     color: white;
     background-color: rgb(209, 58, 58);
+    justify-content: center;
+}
+
+#Enviar{
+    color: red;
+    size: 10px;
+    display: flex;
 }
