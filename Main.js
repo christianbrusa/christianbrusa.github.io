@@ -23,10 +23,10 @@ porque puedo buscar en ella, puedo combinar, puedo eliminar items.
 
 //Estructura de datos
 let datos = [
-    { titulo: 'carne', precio: 100, cantidad: 1 },
-    { titulo: 'sopa', precio: 200, cantidad: 2 },
-    { titulo: 'masa', precio: 300, cantidad: 3 },
-    { titulo: 'fideos', precio: 400, cantidad: 4 }
+    { titulo: 'fideos', precio: 100, cantidad: 1 },
+    { titulo: 'carne', precio: 200, cantidad: 2 },
+    { titulo: 'pollo', precio: 300, cantidad: 3 },
+    { titulo: 'pescado', precio: 400, cantidad: 4 }
 ]
 
 //vista es para que no se modifique la información de datos[];
@@ -42,8 +42,6 @@ const inputBusqueda = document.querySelector('#inputBusqueda');
 const btnDeshacer = document.querySelector('#btnDeshacer');
 const inpAgregar = document.querySelector('#inpAgregar');
 const galeria = document.querySelector('#galeria');
-
-/*PRUEBA*/
 const limpiar = document.querySelector('#Limpiarlista');
 
 
@@ -77,8 +75,24 @@ function render(lista = [{ titulo: '', cantidad: 0, precio: 0 }]) {
     })
 }
 
+async function loadAPI(completado) {
+    const endpoint = 'https://5f7e3d160198da001689368d.mockapi.io/Clientes';
+
+    const res = await fetch(endpoint);
+    const json = await res.json();
+
+    datos = json;
+
+    completado(datos);
+}
+
 //--Eventos--
 
+document.addEventListener('DOMContentLoaded', () => {
+    loadAPI(function(){
+        render(datos);
+    });
+});
 
 //al hacer click en el boton (Agregar item).
 
@@ -141,15 +155,22 @@ btnDeshacer.addEventListener('click', () => {
     alert("volviste atras");
 })
 //al hacer click en (limpiar lista).
-//al hacer click en (guardar lista).
-//al hacer click en (cargar lista).
-//al hacer click en un item con (la clase borrar).
-
-
+/*hecho por mi al 100*/
 limpiar.addEventListener('click', () =>{
     alert("se limpió la lista");
     datos = [];
 })
+
+//al hacer click en (guardar lista).
+
+/*yo creo que aqui debemos guardar datos en una nueva variable
+y ya que al limpiarlista se borre el array, los datos sigan en esta nueva variable*/
+
+//al hacer click en (cargar lista).
+
+/*aqui debemos reflejar la nueva variable de guardar*/
+
+//al hacer click en un item con (la clase borrar).
 
 //--Objetos--
 
