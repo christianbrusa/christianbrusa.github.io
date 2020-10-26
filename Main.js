@@ -51,15 +51,17 @@ const limpiar = document.querySelector('#Limpiarlista');
 para ello, creamos la función Render.
 -> Lo que va a hacer es recibir una lista de items y procesarla.*/
 
-const template = ({titulo, cantidad, precio}) =>
+const template = ({ titulo, cantidad, precio}) =>
     `<div class="item">
                 <div class="titulo">
                   ${titulo}  
                 </div>
 
                 <div class="controles">
-                    <span>${cantidad}</span>
-                    <span>${precio}</span>
+                    <span>Stock : ${cantidad}</span>
+                    <br>
+                    <br>
+                    <span>Precio : $${precio}</span>
                 </div>
 
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="eliminar">
@@ -75,6 +77,7 @@ function render(lista = [{ titulo: '', cantidad: 0, precio: 0 }]) {
     })
 }
 
+//paso 1 para hacer un GET a MockAPI
 async function loadAPI(completado) {
     const endpoint = 'https://5f7e3d160198da001689368d.mockapi.io/Clientes';
 
@@ -87,9 +90,9 @@ async function loadAPI(completado) {
 }
 
 //--Eventos--
-
+//paso 2 para hacer un GET a MockAPI
 document.addEventListener('DOMContentLoaded', () => {
-    loadAPI(function(){
+    loadAPI(function () {
         render(datos);
     });
 });
@@ -116,16 +119,16 @@ btnAgregar.addEventListener('click', () => {
     datosPrevios = datos.slice(0);
     /*el settimeout aqui funciona para generar un delay y 
     ayudar a que el boton deshacer funcione correctamente*/
-    setTimeout(function(){
-    //agregar un nuevo item/objeto
+    setTimeout(function () {
+        //agregar un nuevo item/objeto
         datos.push({
-        //.value: tomar lo que se tomo en el textfield.
-        titulo: inpAgregar.value,
-        cantidad: 0,
-        precio: 0
-    });
-    alert("item agregado");
-}, 500);
+            //.value: tomar lo que se tomo en el textfield.
+            titulo: inpAgregar.value,
+            cantidad: 0,
+            precio: 0
+        });
+        alert("item agregado");
+    }, 500);
 
 });
 
@@ -134,12 +137,12 @@ btnAgregar.addEventListener('click', () => {
 
 inputBusqueda.addEventListener('input', e => {
     let vista = datos.filter((val) => {
-        if (val.titulo.includes(e.target.value)){
+        if (val.titulo.includes(e.target.value)) {
             /*si retorna true es porque el (val) se encuentra 
             dentro de algun titulo del array vista*/
             return true;
         }
-        else{
+        else {
             return false;
         }
     })
@@ -156,7 +159,7 @@ btnDeshacer.addEventListener('click', () => {
 })
 //al hacer click en (limpiar lista).
 /*hecho por mi al 100*/
-limpiar.addEventListener('click', () =>{
+limpiar.addEventListener('click', () => {
     alert("se limpió la lista");
     datos = [];
 })
