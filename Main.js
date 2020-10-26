@@ -162,6 +162,7 @@ btnDeshacer.addEventListener('click', () => {
 limpiar.addEventListener('click', () => {
     alert("se limpió la lista");
     datos = [];
+    render(datos);
 })
 
 //al hacer click en (guardar lista).
