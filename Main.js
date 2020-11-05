@@ -51,7 +51,7 @@ const limpiar = document.querySelector('#Limpiarlista');
 para ello, creamos la función Render.
 -> Lo que va a hacer es recibir una lista de items y procesarla.*/
 
-const template = ({ titulo, cantidad, precio}) =>
+const template = ({ titulo, cantidad, precio, imagen}) =>
     `<div class="item">
                 <div class="titulo">
                   ${titulo}  
@@ -63,6 +63,8 @@ const template = ({ titulo, cantidad, precio}) =>
                     <br>
                     <span>Precio : $${precio}</span>
                 </div>
+
+                <img src="${imagen}" width="200" height="200" />
 
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="eliminar">
                     Eliminar
